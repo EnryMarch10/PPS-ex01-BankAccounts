@@ -7,22 +7,11 @@ import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BankAccountTest {
-
-    private BankAccount account;
+public class GoldBankAccountTest extends CoreBankAccountTest {
 
     @BeforeEach
     void init(){
-        this.account = new BankAccount();
-    }
-
-    @Test
-    void canDeposit(){
-        int amount1 = 100;
-        int amount2 = 20;
-        this.account.deposit(amount1);
-        this.account.deposit(amount2);
-        assertEquals(amount1 + amount2, this.account.getBalance());
+        this.account = new GoldBankAccount();
     }
 
     @ParameterizedTest

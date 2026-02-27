@@ -1,8 +1,8 @@
 package bankaccounts;
 
-public class BankAccount {
-
+public abstract class CoreBankAccount {
     private int balance;
+
     public void deposit(int amount) {
         this.balance = this.balance + amount;
     }
@@ -11,9 +11,7 @@ public class BankAccount {
         this.balance = this.balance - amount - feeCalculation(amount);
     }
 
-    private int feeCalculation(int amount) {
-        return amount > 50 ? 1 : 0;
-    }
+    protected abstract int feeCalculation(int amount);
 
     public int getBalance() {
         return this.balance;
